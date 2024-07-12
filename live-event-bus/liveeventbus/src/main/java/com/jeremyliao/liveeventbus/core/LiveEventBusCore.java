@@ -1,11 +1,13 @@
 package com.jeremyliao.liveeventbus.core;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.arch.lifecycle.ExternalLiveData;
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
@@ -115,6 +117,7 @@ public final class LiveEventBusCore {
         this.logger.setEnable(enable);
     }
 
+    @SuppressLint("UnspecifiedRegisterReceiverFlag")
     void registerReceiver() {
         if (isRegisterReceiver) {
             return;
@@ -123,7 +126,14 @@ public final class LiveEventBusCore {
         if (application != null) {
             IntentFilter intentFilter = new IntentFilter();
             intentFilter.addAction(IpcConst.ACTION);
-            application.registerReceiver(receiver, intentFilter);
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE){
+                application.registerReceiver(receiver, intentFilter, Context.RECEIVER_EXPORTED);
+            }
+            else
+            {
+                application.registerReceiver(receiver, intentFilter);
+
+            }
             isRegisterReceiver = true;
         }
     }
