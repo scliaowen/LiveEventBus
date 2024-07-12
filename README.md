@@ -1,5 +1,5 @@
 # LiveEventBus
-![license](https://img.shields.io/github/license/JeremyLiao/LiveEventBus.svg) [![version](https://img.shields.io/badge/JCenter-v1.7.3-blue.svg)](https://mvnrepository.com/artifact/com.jeremyliao/live-event-bus) [![version](https://img.shields.io/badge/maven-v1.8.0-blue)](https://search.maven.org/artifact/io.github.jeremyliao/live-event-bus)
+![license](https://img.shields.io/github/license/scliaowen/LiveEventBus.svg) [![version](https://img.shields.io/badge/JCenter-v1.7.3-blue.svg)](https://mvnrepository.com/artifact/com.scliaowen/live-event-bus) [![version](https://img.shields.io/badge/maven-v1.8.0-blue)](https://search.maven.org/artifact/io.github.scliaowen/live-event-bus)
 
 LiveEventBus是一款Android消息总线，基于LiveData，具有生命周期感知能力，支持Sticky，支持AndroidX，支持跨进程，支持跨APP
 ![logo](https://user-images.githubusercontent.com/23290617/68295106-97e64380-00cc-11ea-919d-605f123ec084.png)
@@ -28,29 +28,29 @@ EventBus | :x: | :white_check_mark: | :white_check_mark: | :x: | :x: | :white_ch
 RxBus | :x: | :x: | :white_check_mark: | :x: | :x: | :white_check_mark:
 LiveEventBus | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:
 
-#### 想了解更多？请点击：[全面了解Android消息总线](https://github.com/JeremyLiao/SmartEventBus/blob/master/docs/bus_all.md)
+#### 想了解更多？请点击：[全面了解Android消息总线](https://github.com/scliaowen/SmartEventBus/blob/master/docs/bus_all.md)
 
 ## 使用
-> 1.8及以上版本全面迁移至maven，同时groupID变为io.github.jeremyliao，1.8以下版本保留JCenter
+> 1.8及以上版本全面迁移至maven，同时groupID变为io.github.scliaowen，1.8以下版本保留JCenter
 #### maven
 
 - 非AndroidX
 ```
-implementation 'io.github.jeremyliao:live-event-bus:1.8.0'
+implementation 'io.github.scliaowen:live-event-bus:1.8.0'
 ```
 - AndroidX
 ```
-implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+implementation 'io.github.scliaowen:live-event-bus-x:1.8.0'
 ```
 #### JCenter
 - 非AndroidX
 
 ```
-implementation 'com.jeremyliao:live-event-bus:1.7.3'
+implementation 'com.scliaowen:live-event-bus:1.7.3'
 ```
 - AndroidX
 ```
-implementation 'com.jeremyliao:live-event-bus-x:1.7.3'
+implementation 'com.scliaowen:live-event-bus-x:1.7.3'
 ```
 
 ## 快速开始
@@ -191,11 +191,11 @@ void observeStickyForever(@NonNull Observer<T> observer)
 
 - 非AndroidX
 ```
-implementation 'io.github.jeremyliao:leb-processor-gson:x.x.x'
+implementation 'io.github.scliaowen:leb-processor-gson:x.x.x'
 ```
 - AndroidX
 ```
-implementation 'io.github.jeremyliao:lebx-processor-gson:x.x.x'
+implementation 'io.github.scliaowen:lebx-processor-gson:x.x.x'
 ```
 ##### 支持自定义扩展
 - 实现自定义Processor，实现Processor接口
@@ -208,10 +208,10 @@ implementation 'io.github.jeremyliao:lebx-processor-gson:x.x.x'
 ## 更多使用场景
 #### SmartEventBus
 SmartEventBus是一个Android平台的消息总线框架，这是一款非常smart的消息总线框架，能让你定制自己的消息总线。
-[SmartEventBus](https://github.com/JeremyLiao/SmartEventBus)
+[SmartEventBus](https://github.com/scliaowen/SmartEventBus)
 
 #### 在组件化中使用LiveEventBus
-[android-modular](https://github.com/JeremyLiao/android-modular)
+[android-modular](https://github.com/scliaowen/android-modular)
 
 ## 配置
 在Application.onCreate方法中配置：
@@ -232,15 +232,15 @@ LiveEventBus
 
 ## 混淆规则
 ```
--dontwarn com.jeremyliao.liveeventbus.**
--keep class com.jeremyliao.liveeventbus.** { *; }
+-dontwarn com.scliaowen.liveeventbus.**
+-keep class com.scliaowen.liveeventbus.** { *; }
 -keep class android.arch.lifecycle.** { *; }
 -keep class android.arch.core.** { *; }
 ```
 for androidx:
 ```
--dontwarn com.jeremyliao.liveeventbus.**
--keep class com.jeremyliao.liveeventbus.** { *; }
+-dontwarn com.scliaowen.liveeventbus.**
+-keep class com.scliaowen.liveeventbus.** { *; }
 -keep class androidx.lifecycle.** { *; }
 -keep class androidx.arch.core.** { *; }
 ```
@@ -249,7 +249,7 @@ for androidx:
 
 - Q：收不到消息怎么办？
 
-    A：通过Console.getInfo()获取即时的调试信息，主要去观察对应的key下面有没有你关注的Observer（[Console的用法](https://github.com/JeremyLiao/LiveEventBus/blob/master/docs/console.md)）
+    A：通过Console.getInfo()获取即时的调试信息，主要去观察对应的key下面有没有你关注的Observer（[Console的用法](https://github.com/scliaowen/LiveEventBus/blob/master/docs/console.md)）
     ```
     *********Event info*********
     Event name: key_test_delay_life
@@ -259,15 +259,15 @@ for androidx:
         ActiveCount: 1
         ObserverCount: 1
         Observers: 
-            [com.jeremyliao.liveeventbus.core.LiveEventBusCore$ObserverWrapper@992681d=android.arch.lifecycle.ExternalLiveData$ExternalLifecycleBoundObserver@bc258f4]
+            [com.scliaowen.liveeventbus.core.LiveEventBusCore$ObserverWrapper@992681d=android.arch.lifecycle.ExternalLiveData$ExternalLifecycleBoundObserver@bc258f4]
     ```
 - Q：收到重复的消息怎么办？
 
-    A：同样通过Console.getInfo()获取即时的调试信息，主要去观察有没有重复注册的Observer（[Console的用法](https://github.com/JeremyLiao/LiveEventBus/blob/master/docs/console.md)）
+    A：同样通过Console.getInfo()获取即时的调试信息，主要去观察有没有重复注册的Observer（[Console的用法](https://github.com/scliaowen/LiveEventBus/blob/master/docs/console.md)）
     
 - Q：JCenter要关闭了，什么时候迁移？
 
-    A：1.8及以上版本全面迁移至maven，同时groupID变为io.github.jeremyliao，1.8以下版本保留JCenter
+    A：1.8及以上版本全面迁移至maven，同时groupID变为io.github.scliaowen，1.8以下版本保留JCenter
     
 - Q：如何传递List<String>或者Pair<Boolean, Double>这种泛型对象？
 
@@ -299,16 +299,16 @@ for androidx:
 > 若问题不能解决，请提issue。
 
 ## 其他分支版本
-#### [AndroidX](/branchs/live-event-bus-x/liveeventbus-x/src/main/java/com/jeremyliao/liveeventbus)
+#### [AndroidX](/branchs/live-event-bus-x/liveeventbus-x/src/main/java/com/scliaowen/liveeventbus)
 - [x] 支持AndroidX
 - [x] 同master版本一致
 
-#### [classic](/branchs/live-event-bus-classic/liveeventbus-classic/src/main/java/com/jeremyliao/liveeventbus/LiveEventBus.java)
+#### [classic](/branchs/live-event-bus-classic/liveeventbus-classic/src/main/java/com/scliaowen/liveeventbus/LiveEventBus.java)
 - [x] 经典实现版，整个实现就一个java文件
 - [x] 只支持激活状态（Started）可以实时收到消息，非激活状态（Stoped）无法实时收到消息，需等到Activity重新变成激活状态，方可收到消息
 - [x] 不支持跨进程通信
 
-#### [v2](/branchs/live-event-bus-v2/liveeventbus-v2/src/main/java/com/jeremyliao/liveeventbus)
+#### [v2](/branchs/live-event-bus-v2/liveeventbus-v2/src/main/java/com/scliaowen/liveeventbus)
 - [x] v2版，历史版本，已废弃
 - [x] 为了解决非激活态不能实时收到消息的问题，采用修改LiveData源码的方式实现
 
@@ -322,7 +322,7 @@ for androidx:
 
 ## 质量
 - [x] 编写了30个测试用例以确保LiveEventBus能够正常运行。
-- [x] 具体测试用例参见[LiveEventBusTest](/live-event-bus/app/src/androidTest/java/com/jeremyliao/lebapp/LiveEventBusTest.java)
+- [x] 具体测试用例参见[LiveEventBusTest](/live-event-bus/app/src/androidTest/java/com/scliaowen/lebapp/LiveEventBusTest.java)
 
 ## 版本
 
@@ -354,28 +354,28 @@ for androidx:
 - 欢迎提Issue与作者交流
 - 欢迎提Pull request，帮助 fix bug，增加新的feature，让LiveEventBus变得更强大、更好用
 
-## More Open Source by JeremyLiao
+## More Open Source by scliaowen
 
-1. [InterfaceLoader](https://github.com/JeremyLiao/InterfaceLoader) 史上最好用的Android跨进程接口调用框架件
-2. [FastSharedPreferences](https://github.com/JeremyLiao/FastSharedPreferences) 一个Android平台的高性能key-value组件
-3. [SmartEventBus](https://github.com/JeremyLiao/SmartEventBus) SmartEventBus是一个Android平台的消息总线框架，这是一款非常smart的消息总线框架，能让你定制自己的消息总线。
-4. [android-modular](https://github.com/JeremyLiao/android-modular) 一套Android组件化的实施方案和支撑框架
-5. [DataLoader](https://github.com/JeremyLiao/DataLoader) 一个Android异步数据加载框架，用于Activity打开之前预加载数据，页面启动速度优化利器
+1. [InterfaceLoader](https://github.com/scliaowen/InterfaceLoader) 史上最好用的Android跨进程接口调用框架件
+2. [FastSharedPreferences](https://github.com/scliaowen/FastSharedPreferences) 一个Android平台的高性能key-value组件
+3. [SmartEventBus](https://github.com/scliaowen/SmartEventBus) SmartEventBus是一个Android平台的消息总线框架，这是一款非常smart的消息总线框架，能让你定制自己的消息总线。
+4. [android-modular](https://github.com/scliaowen/android-modular) 一套Android组件化的实施方案和支撑框架
+5. [DataLoader](https://github.com/scliaowen/DataLoader) 一个Android异步数据加载框架，用于Activity打开之前预加载数据，页面启动速度优化利器
 
-更多，[请点击](https://github.com/JeremyLiao?tab=repositories)
+更多，[请点击](https://github.com/scliaowen?tab=repositories)
 
 ## 深入学习Android系列，让你精通Android
 #### Flutter系列
-- [JeremyLiao/flutter-learn](https://github.com/JeremyLiao/flutter-learn) 
+- [scliaowen/flutter-learn](https://github.com/scliaowen/flutter-learn) 
 - [alibaba/flutter-go](https://github.com/alibaba/flutter-go) 
 #### Kotlin系列
 - [MindorksOpenSource/from-java-to-kotlin](https://github.com/MindorksOpenSource/from-java-to-kotlin) 
-- [JeremyLiao/kotlin-compare-to-java](https://github.com/JeremyLiao/kotlin-compare-to-java) 
+- [scliaowen/kotlin-compare-to-java](https://github.com/scliaowen/kotlin-compare-to-java) 
 #### Gradle系列
-- [JeremyLiao/android-gradle-study](https://github.com/JeremyLiao/android-gradle-study) 
+- [scliaowen/android-gradle-study](https://github.com/scliaowen/android-gradle-study) 
 #### 算法系列
 - [labuladong/fucking-algorithm](https://github.com/labuladong/fucking-algorithm) 
 #### 测试系列
-- [JeremyLiao/jacoco-android-demo](https://github.com/JeremyLiao/jacoco-android-demo) 
+- [scliaowen/jacoco-android-demo](https://github.com/scliaowen/jacoco-android-demo) 
 	
-### [招聘|抖音成都招聘|有兴趣的同学可以点进去看一下，谢谢](https://github.com/JeremyLiao/ByteDanceRecruit)
+### [招聘|抖音成都招聘|有兴趣的同学可以点进去看一下，谢谢](https://github.com/scliaowen/ByteDanceRecruit)
